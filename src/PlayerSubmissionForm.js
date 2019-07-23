@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 class PlayerSubmissionForm extends React.Component {
 	render() {
