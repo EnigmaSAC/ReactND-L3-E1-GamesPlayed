@@ -12,6 +12,8 @@ class GamesPlayedDashboard extends React.Component {
 				//<SectionHeader />
 				//<PlayerSubmissionForm />
 				//<PlayersList />
+				//	<PlayersListItem />
+				//	<PlayersListItem />
 				//<ShowOrHideButton />
 				}
 			</div>
