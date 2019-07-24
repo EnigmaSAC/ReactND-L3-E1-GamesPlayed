@@ -18,12 +18,28 @@ class GamesPlayedDashboard extends React.Component {
 		}))
 		console.log(`showGames is now ${!this.state.showGames}`)
 	}
+	addPlayer = (player) => {
+		if (this.isDuplicated(player) <= 0) {
+			let arr = this.state.players
+			arr.push(player)
+			this.setState(() => ({
+				players: arr
+			}))
+			console.log('Players', arr)
+		} else {
+			//show a message
+			alert(`Username: ${player.username} is already being used, please select a new one!`)
+		}
+	}
+	isDuplicated = (playerObj) => {
+		return this.state.players.filter((player) => player.username === playerObj.username)
+	}
 	render() {
 		const {players, showGames} = this.state
 		return (
 			<div>
 				<SectionHeader headerText={'Add a Player'} />
-				<PlayerSubmissionForm  />
+				<PlayerSubmissionForm addPlayer={this.addPlayer} />
 				<PlayersList players={players} showGames={showGames} />
 				<ShowOrHideButton onClickHandler={this.toggleGamesCount} buttonText={showGames ? 'Hide the Number of Games Played' : 'Show the Number of Games Played'} />
 			</div>
