@@ -28,12 +28,23 @@ class PlayerSubmissionForm extends React.Component {
             default:
                 break;
         }
-
-        this.setState(() => (inputObj))
+        this.setState(() => (newStateObj))
+    }
+    enableButton = () => {
+        const {firstName, lastName, username} = this.state
+         if (firstName && lastName && username) {
+            this.setState(()=>({
+                buttonEnabled: false
+            }))
+         } else {
+            this.setState(()=>({
+                buttonEnabled: true
+            }))
+         }
     }
 	render() {
         const {addPlayer} = this.props
-        const {firstName, lastName, username} = this.state
+        const {firstName, lastName, username, buttonEnabled} = this.state
 		return (
 			<div>
                 <input id="first" type='text' className='first-name' placeholder='First Name' value={firstName} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
