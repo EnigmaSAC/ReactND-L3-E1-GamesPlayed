@@ -6,7 +6,8 @@ class PlayerSubmissionForm extends React.Component {
     state = {
         firstName: '',
         lastName: '',
-        username: ''
+        username: '',
+        buttonEnabled: false
     }
     createPlayer = (first, last, user) => {
         const newPlayer = new Player(first, last, user)
