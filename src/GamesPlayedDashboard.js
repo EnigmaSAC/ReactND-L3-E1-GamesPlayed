@@ -13,6 +13,12 @@ class GamesPlayedDashboard extends React.Component {
 		],
 		showGames: true
 	}
+	toggleGamesCount = () => {
+		this.setState(() => ({
+			showGames: (this.state.showGames ? false : true)
+		}))
+		console.log(`showGames is now ${!this.state.showGames}`)
+	}
 	render() {
 		const {players, showGames} = this.State
 		return (
