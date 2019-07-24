@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionHeader from './SectionHeader'
 import PlayerSubmissionForm from './PlayerSubmissionForm'
+import PlayersList from './PlayersList'
 
 class GamesPlayedDashboard extends React.Component {
 	render() {
@@ -8,6 +9,7 @@ class GamesPlayedDashboard extends React.Component {
 			<div>
 				<SectionHeader headerText={'Add a Player'} />
 				<PlayerSubmissionForm />
+				<PlayersList />
 				{
 				//<SectionHeader />
 				//<PlayerSubmissionForm />
