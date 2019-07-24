@@ -12,14 +12,6 @@ class GamesPlayedDashboard extends React.Component {
 				<PlayerSubmissionForm />
 				<PlayersList players={[],[],[]} />
 				<ShowOrHideButton onClickHandler={()=> console.log('Show Or Hide clicked!')} buttonText={'Hide the Number of Games Played'} />
-				{
-				//<SectionHeader />
-				//<PlayerSubmissionForm />
-				//<PlayersList />
-				//	<PlayersListItem />
-				//	<PlayersListItem />
-				//<ShowOrHideButton />
-				}
 			</div>
 		)
 	}
