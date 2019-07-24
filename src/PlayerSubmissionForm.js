@@ -14,16 +14,16 @@ class PlayerSubmissionForm extends React.Component {
         return newPlayer
     }
     onChangeHandler = (inputId, inputValue) => {
-        let inputObj = {}
+        let newStateObj = {}
         switch(inputId) {
             case 'first':
-                inputObj.firstName = inputValue
+                newStateObj.firstName = inputValue
                 break
             case 'last':
-                inputObj.lastName = inputValue
+                newStateObj.lastName = inputValue
                 break
             case 'user':
-                inputObj.username = inputValue
+                newStateObj.username = inputValue
                 break
             default:
                 break;
