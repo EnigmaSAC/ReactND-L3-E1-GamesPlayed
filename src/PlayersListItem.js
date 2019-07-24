@@ -2,14 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const PlayersListItem = props => {
-	const {player} = props
+	const {username, gamesCount} = props
 	return (
-		<li key={player.username}>`${player.username} played ${player.games} games.`</li>
+		<li key={username}>{username} played {gamesCount} games.</li>
 	)
 }
 
 PlayersListItem.propTypes = {
-	player: PropTypes.object.isRequired
+	username: PropTypes.string.isRequired,
+	gamesCount: PropTypes.number.isRequired
 }
 
 export default PlayersListItem
