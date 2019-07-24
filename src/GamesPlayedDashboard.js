@@ -26,7 +26,7 @@ class GamesPlayedDashboard extends React.Component {
 				<SectionHeader headerText={'Add a Player'} />
 				<PlayerSubmissionForm  />
 				<PlayersList players={players} showGames={showGames} />
-				<ShowOrHideButton onClickHandler={()=> console.log('Show Or Hide clicked!')} buttonText={'Hide the Number of Games Played'} />
+				<ShowOrHideButton onClickHandler={this.toggleGamesCount} buttonText={showGames ? 'Hide the Number of Games Played' : 'Show the Number of Games Played'} />
 			</div>
 		)
 	}
