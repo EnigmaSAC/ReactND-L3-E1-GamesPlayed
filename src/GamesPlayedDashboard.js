@@ -20,7 +20,7 @@ class GamesPlayedDashboard extends React.Component {
 		console.log(`showGames is now ${!this.state.showGames}`)
 	}
 	render() {
-		const {players, showGames} = this.State
+		const {players, showGames} = this.state
 		return (
 			<div>
 				<SectionHeader headerText={'Add a Player'} />
