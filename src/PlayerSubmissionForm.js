@@ -7,11 +7,12 @@ class PlayerSubmissionForm extends React.Component {
         firstName: '',
         lastName: '',
         username: '',
-        buttonEnabled: false
+        buttonDisabled: true
     }
     createPlayer = (first, last, user) => {
         const newPlayer = new Player(first, last, user)
-        return newPlayer
+        this.props.addPlayer (newPlayer)
+        // return newPlayer
     }
     onChangeHandler = (inputId, inputValue) => {
         let newStateObj = {}
@@ -29,28 +30,35 @@ class PlayerSubmissionForm extends React.Component {
                 break;
         }
         this.setState(() => (newStateObj))
+        this.enableButton()
     }
     enableButton = () => {
         const {firstName, lastName, username} = this.state
-         if (firstName && lastName && username) {
+         if (firstName.length > 0 && lastName.length > 0 && username.length > 0) {
             this.setState(()=>({
-                buttonEnabled: false
+                buttonDisabled: false
             }))
          } else {
             this.setState(()=>({
-                buttonEnabled: true
+                buttonDisabled: true
             }))
          }
     }
 	render() {
         const {addPlayer} = this.props
-        const {firstName, lastName, username, buttonEnabled} = this.state
+        const {firstName, lastName, username, buttonDisabled} = this.state
 		return (
 			<div>
-                <input id="first" type='text' className='first-name' placeholder='First Name' value={firstName} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
-                <input id="last" type='text' className='last-name' placeholder='Last Name' value={lastName} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
-                <input id="user" type='text' className='username' placeholder='Username' value={username} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
-                <button onClick={()=>(addPlayer(this.createPlayer(firstName, lastName, username)))}>Add Player</button>
+                <input id="first" type='text' className='first-name' placeholder='First Name' value={firstName} onChange={(event) => {
+                    this.onChangeHandler(event.target.id, event.target.value)
+                }}/>
+                <input id="last" type='text' className='last-name' placeholder='Last Name' value={lastName} onChange={(event) => {
+                    this.onChangeHandler(event.target.id, event.target.value)
+                }}/>
+                <input id="user" type='text' className='username' placeholder='Username' value={username} onChange={(event) => {
+                    this.onChangeHandler(event.target.id, event.target.value)
+                }}/>
+                <button disabled={buttonDisabled} onClick={()=>(this.createPlayer(firstName,lastName,username))}>Add Player</button>
 			</div>
 		)
 	}
