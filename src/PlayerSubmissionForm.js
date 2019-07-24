@@ -3,6 +3,33 @@ import PropTypes from 'prop-types'
 import Player from './PlayerClass'
 
 class PlayerSubmissionForm extends React.Component {
+    state = {
+        firstName: '',
+        lastName: '',
+        username: ''
+    }
+    createPlayer = (first, last, user) => {
+        const newPlayer = new Player(first, last, user)
+        return newPlayer
+    }
+    onChangeHandler = (inputId, inputValue) => {
+        let inputObj = {}
+        switch(inputId) {
+            case 'first':
+                inputObj.firstName = inputValue
+                break
+            case 'last':
+                inputObj.lastName = inputValue
+                break
+            case 'user':
+                inputObj.username = inputValue
+                break
+            default:
+                break;
+        }
+
+        this.setState(() => (inputObj))
+    }
 	render() {
 		return (
 			<div>
