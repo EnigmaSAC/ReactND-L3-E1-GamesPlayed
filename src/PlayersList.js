@@ -9,7 +9,9 @@ class PlayersList extends React.Component {
 			<div>
 				<SectionHeader headerText={"Player's List"} />
 				<ol>
-
+					<PlayersListItem username={'username1'} gamesCount={0} />
+					<PlayersListItem username={'username2'} gamesCount={0} />
+					<PlayersListItem username={'username3'} gamesCount={0} />
 				</ol>
 			</div>
 		)
