@@ -45,7 +45,7 @@ class PlayerSubmissionForm extends React.Component {
 }
 
 PlayerSubmissionForm.propTypes = {
-
+    addPlayer: PropTypes.func.isRequired
 }
 
 export default PlayerSubmissionForm
