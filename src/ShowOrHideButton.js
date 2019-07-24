@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const ShowOrHideButton = props => {
 	const {onClickHandler, buttonText} = props
 	return (
-		<button onClic={onClickHandler}>{buttonText}</button>
+		<button onClick={onClickHandler}>{buttonText}</button>
 	)
 }
 
