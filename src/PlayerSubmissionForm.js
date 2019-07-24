@@ -31,6 +31,8 @@ class PlayerSubmissionForm extends React.Component {
         this.setState(() => (inputObj))
     }
 	render() {
+        const {addPlayer} = this.props
+        const {firstName, lastName, username} = this.state
 		return (
 			<div>
                 <input type='text' className='first-name' placeholder='First Name' />
