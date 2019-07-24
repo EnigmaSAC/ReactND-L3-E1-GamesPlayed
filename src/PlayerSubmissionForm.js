@@ -35,10 +35,10 @@ class PlayerSubmissionForm extends React.Component {
         const {firstName, lastName, username} = this.state
 		return (
 			<div>
-                <input type='text' className='first-name' placeholder='First Name' />
-                <input type='text' className='last-name' placeholder='Last Name' />
-                <input type='text' className='username' placeholder='username' />
-                <button>Add Player</button>
+                <input id="first" type='text' className='first-name' placeholder='First Name' value={firstName} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
+                <input id="last" type='text' className='last-name' placeholder='Last Name' value={lastName} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
+                <input id="user" type='text' className='username' placeholder='Username' value={username} onChange={(event) => this.onChangeHandler(event.target.id, event.target.value)}/>
+                <button onClick={()=>(addPlayer(this.createPlayer(firstName, lastName, username)))}>Add Player</button>
 			</div>
 		)
 	}
