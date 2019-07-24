@@ -6,7 +6,7 @@ import ShowOrHideButton from './ShowOrHideButton'
 import Player from './PlayerClass'
 
 class GamesPlayedDashboard extends React.Component {
-	State = {
+	state = {
 		players:[
 			{firstName: 'Sergio', lastName: 'Cabral', username: 'scabralo', gamesCount: 0},
 			{firstName: 'Antonio', lastName: 'Ogando', username: 'enigmasac', gamesCount: 0},
