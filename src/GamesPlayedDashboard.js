@@ -3,7 +3,6 @@ import SectionHeader from './SectionHeader'
 import PlayerSubmissionForm from './PlayerSubmissionForm'
 import PlayersList from './PlayersList'
 import ShowOrHideButton from './ShowOrHideButton'
-import Player from './PlayerClass'
 
 class GamesPlayedDashboard extends React.Component {
 	state = {
