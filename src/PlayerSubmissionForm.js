@@ -45,7 +45,6 @@ class PlayerSubmissionForm extends React.Component {
          }
     }
 	render() {
-        const {addPlayer} = this.props
         const {firstName, lastName, username, buttonDisabled} = this.state
 		return (
 			<div>
